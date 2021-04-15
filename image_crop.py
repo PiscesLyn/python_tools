@@ -24,6 +24,8 @@ opt = parser.parse_args()
 opt.data_dir = Path(opt.data_dir)
 if not opt.save_dir:
     opt.save_dir = Path('.results')
+else:
+    opt.save_dir = Path(opt.save_dir)
 
 if not opt.save_dir.exists():
     opt.save_dir.mkdir(exist_ok=True, parents=True)
